@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://djkbnwdviuobq"]
+
+[ext_resource type="PackedScene" uid="uid://e0ymkdqpg4kj" path="res://flower/waypoint_marker.tscn" id="1_37kl0"]
+
+[node name="test" type="Node2D"]
+position = Vector2(80, 66)
+
+[node name="WaypointMarker" parent="." instance=ExtResource("1_37kl0")]
+modulate = Color(1, 1, 0.08627451, 1)
+position = Vector2(112, 78)
+
+[node name="WaypointMarker2" parent="." instance=ExtResource("1_37kl0")]
+modulate = Color(1, 1, 0.08627451, 1)
+position = Vector2(181, 108)
+
+[node name="WaypointMarker3" parent="." instance=ExtResource("1_37kl0")]
+modulate = Color(1, 1, 0.08627451, 1)
+position = Vector2(131, 138)

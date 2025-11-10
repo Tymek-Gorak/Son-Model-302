@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcvpaymd03wit"
+path="res://.godot/imported/ryk kosiaru.wav-98907f73f9d12b57c8fe811e240f0215.sample"
+
+[deps]
+
+source_file="res://sounds/ryk kosiaru.wav"
+dest_files=["res://.godot/imported/ryk kosiaru.wav-98907f73f9d12b57c8fe811e240f0215.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

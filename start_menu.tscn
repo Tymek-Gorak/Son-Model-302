@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://nbcwp44xkrkq"]
+
+[ext_resource type="Texture2D" uid="uid://bs6t4m02ssdsk" path="res://Misc/skanse_nn.png" id="1_jwbto"]
+
+[sub_resource type="GDScript" id="GDScript_jwbto"]
+script/source = "extends CanvasLayer
+
+@onready var margin_container: MarginContainer = %MarginContainer
+@onready var rich_text_label: RichTextLabel = %RichTextLabel
+@onready var panel: Panel = %Panel
+
+var is_starting := false
+
+func _ready() -> void:
+	await get_tree().process_frame
+	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(margin_container, \"position\", margin_container.position, 0.5).from(margin_container.position - Vector2(0, get_viewport().get_visible_rect().size.y))
+	tween.parallel().tween_property(panel, \"modulate\", panel.modulate, 0.5).from(Color.TRANSPARENT)
+	tween.parallel().tween_property(rich_text_label, \"position\", rich_text_label.position, 0.5).from(rich_text_label.position + Vector2(0, get_viewport().get_visible_rect().size.y))
+	await get_tree().create_timer(0.5).timeout
+	tween = create_tween().set_loops().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(margin_container, \"position\", Vector2.DOWN * 5, 1.5).as_relative()
+	tween.tween_property(margin_container, \"position\", Vector2.UP * 5, 1.5).as_relative()
+	$CenterContainer.mouse_behavior_recursive = Control.FOCUS_BEHAVIOR_INHERITED
+	
+	
+	
+	
+func _start():
+	if is_starting: return
+	is_starting = true
+	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(margin_container, \"position\", margin_container.position - Vector2(0, get_viewport().get_visible_rect().size.y), 0.5)
+	tween.parallel().tween_property(panel, \"modulate\", Color.TRANSPARENT, 0.5)
+	tween.parallel().tween_property(rich_text_label, \"position\", rich_text_label.position + Vector2(0, get_viewport().get_visible_rect().size.y), 0.5)
+	await tween.finished
+	get_tree().paused = false
+	queue_free()
+	
+func _process(_delta: float) -> void:
+	if Input.is_anything_pressed():
+		_start()
+
+func _on_panel_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		_start()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwbto"]
+atlas = ExtResource("1_jwbto")
+region = Rect2(0, 0, 161, 89)
+
+[node name="StartMenu" type="CanvasLayer"]
+process_mode = 3
+script = SubResource("GDScript_jwbto")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.5137255)
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_jwbto")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/paragraph_separation = 6
+bbcode_enabled = true
+text = "Skansen Sieprc
+[b]GAME JAM 2025[/b]"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="CenterContainer/Panel" to="." method="_on_panel_gui_input"]
