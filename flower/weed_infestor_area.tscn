@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdvkmvwlly4g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dllom"]
+size = Vector2(14, 14)
+
+[node name="WeedInfestorArea" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dllom")
+debug_color = Color(0.2797899, 0.62853104, 0.18381378, 0.41960785)

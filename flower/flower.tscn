@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsgnjc07usvpy"]
+
+[ext_resource type="Script" uid="uid://ck1opcgoosa5r" path="res://flower/flower_base.gd" id="1_qc4up"]
+[ext_resource type="Script" uid="uid://cgfnkcnksv57n" path="res://flower/weed_zone.gd" id="3_e74jf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc4up"]
+resource_local_to_scene = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qc4up"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e74jf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc4up"]
+size = Vector2(6, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e74jf"]
+radius = 43.011627
+
+[node name="Flower" type="Area2D" groups=["flower"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_qc4up")
+weed_sprite = SubResource("AtlasTexture_qc4up")
+corrupt_time = 8.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -9.536743e-07)
+sprite_frames = SubResource("SpriteFrames_qc4up")
+autoplay = "default"
+
+[node name="WeedTextureSprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_e74jf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_qc4up")
+
+[node name="WeedZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_e74jf")
+
+[node name="WeedZoneCollision" type="CollisionShape2D" parent="WeedZone"]
+unique_name_in_owner = true
+visible = false
+shape = SubResource("CircleShape2D_e74jf")
+disabled = true
+debug_color = Color(0.74100715, 0.4411551, 0.4162496, 0.41960785)
+
+[node name="CorruptionTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="CorruptionTimer" to="." method="_turn_into_weed"]

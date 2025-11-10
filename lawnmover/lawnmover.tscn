@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://r7ros1viwyoe"]
+
+[ext_resource type="Script" uid="uid://c4a6brnu4ach5" path="res://lawnmover/lawnmover.gd" id="1_36rah"]
+[ext_resource type="Texture2D" uid="uid://cdqqsqojn8pjs" path="res://lawnmover/Lownmover 16x16.png" id="2_k7oek"]
+[ext_resource type="Texture2D" uid="uid://crkd2hewjrlmn" path="res://Misc/Partickle_4x4.png" id="3_k7oek"]
+[ext_resource type="AudioStream" uid="uid://ca22vl7eqvp5l" path="res://sounds/odbicie.wav" id="4_dde2p"]
+[ext_resource type="AudioStream" uid="uid://c7g8umbe28y8" path="res://sounds/drift.wav" id="5_a31sx"]
+[ext_resource type="AudioStream" uid="uid://bcvpaymd03wit" path="res://sounds/ryk kosiaru.wav" id="6_sr6u5"]
+[ext_resource type="AudioStream" uid="uid://h08kyas6ww7l" path="res://sounds/RykSus.wav" id="7_a31sx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_36rah"]
+radius = 2.0
+height = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36rah"]
+size = Vector2(10.5, 8)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r7m3k"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_k7oek"]
+offsets = PackedFloat32Array(0, 0.51293105, 1)
+colors = PackedColorArray(0.10980392, 0.5647059, 0, 1, 0.15179175, 0.6941684, 0.047819473, 0.7025862, 0.15294118, 0.69411767, 0.047058824, 0)
+
+[node name="Lawnmover" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_mask = 18
+motion_mode = 1
+script = ExtResource("1_36rah")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_k7oek")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_36rah")
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["MainCamera"]]
+unique_name_in_owner = true
+limit_left = -537
+limit_top = -403
+limit_right = 642
+limit_bottom = 431
+
+[node name="MowArea" type="CharacterBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MowArea"]
+position = Vector2(-0.75, 0)
+shape = SubResource("RectangleShape2D_36rah")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+z_index = -1
+material = SubResource("CanvasItemMaterial_r7m3k")
+position = Vector2(-4.5, 2.5)
+amount = 24
+texture = ExtResource("3_k7oek")
+explosiveness = 0.15
+lifetime_randomness = 0.18
+local_coords = true
+direction = Vector2(4.575, -1)
+spread = 30.0
+gravity = Vector2(0, 326.667)
+initial_velocity_min = 73.98
+initial_velocity_max = 156.19
+scale_amount_min = 0.4
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_k7oek")
+anim_speed_max = 1.38
+
+[node name="bounce" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_dde2p")
+volume_db = -27.616
+
+[node name="drift" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_a31sx")
+volume_db = -26.684
+
+[node name="RykStart" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_sr6u5")
+volume_db = -38.316
+
+[node name="RykSus" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_a31sx")
+volume_db = -38.316

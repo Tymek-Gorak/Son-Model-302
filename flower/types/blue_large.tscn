@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://br7srllnx3suk"]
+
+[ext_resource type="PackedScene" uid="uid://bsgnjc07usvpy" path="res://flower/flower.tscn" id="1_jrfxo"]
+[ext_resource type="Texture2D" uid="uid://btxjmyypn3cfv" path="res://Misc/tileset_192x192.png" id="2_i0vtc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crql2"]
+resource_local_to_scene = true
+atlas = ExtResource("2_i0vtc")
+region = Rect2(464, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk0l8"]
+atlas = ExtResource("2_i0vtc")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yt8u"]
+atlas = ExtResource("2_i0vtc")
+region = Rect2(272, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2amoh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk0l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yt8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Flower" instance=ExtResource("1_jrfxo")]
+weed_sprite = SubResource("AtlasTexture_crql2")
+is_weed = true
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_2amoh")

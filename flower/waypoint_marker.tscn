@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://e0ymkdqpg4kj"]
+
+[ext_resource type="Script" uid="uid://b7qy7ybn53bbw" path="res://flower/waypoint_marker.gd" id="2_g6iex"]
+[ext_resource type="Texture2D" uid="uid://bhx5gpe86r3ym" path="res://Misc/weed.png" id="2_h1fcl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6iex"]
+radius = 141.75642
+
+[node name="WaypointMarker" type="Area2D"]
+visible = false
+collision_layer = 32
+collision_mask = 32
+priority = 1
+script = ExtResource("2_g6iex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-3.200003, -3.200004)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_g6iex")
+disabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_h1fcl")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
