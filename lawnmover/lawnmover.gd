@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.move_toward(Vector2.RIGHT.rotated(rotation) * MAX_SPEED, DECCELARATION * delta)
 			
 	#velocity = velocity.rotated(rotation -PI/2)
-	if get_last_slide_collision():
+	if get_last_slide_collision() and velocity.length() >=50:
 		var collision : KinematicCollision2D = get_last_slide_collision()
 		velocity = velocity.bounce(collision.get_normal()) * 1
 		%bounce.pitch_scale = 1 + randf_range(-0.2, 0.2)
