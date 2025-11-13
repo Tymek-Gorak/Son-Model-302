@@ -49,7 +49,7 @@ func mow_plant():
 	audio_player_count+=1
 	var audio_player := AudioStreamPlayer.new()
 	audio_player.stream = PLANT_MOWING_SOUND
-	audio_player.volume_db = -18
+	audio_player.volume_db = 5
 	audio_player.pitch_scale = 1.0 + randf_range(-0.2, 0.2)
 	add_child(audio_player)
 	audio_player.play()
@@ -62,7 +62,7 @@ func mow_fence():
 	audio_player_count_fence+=1
 	var audio_player := AudioStreamPlayer.new()
 	audio_player.stream = FENCE_BREAK
-	audio_player.volume_db = -23
+	audio_player.volume_db = -13
 	audio_player.pitch_scale = 1.0 + randf_range(-0.2, 0.2)
 	add_child(audio_player)
 	audio_player.play()

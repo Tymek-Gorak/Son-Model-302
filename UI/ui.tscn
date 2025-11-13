@@ -69,4 +69,4 @@ horizontal_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextDayMenu"]
 unique_name_in_owner = true
 stream = ExtResource("1_2fwl4")
-volume_db = -21.211
+volume_db = -0.016

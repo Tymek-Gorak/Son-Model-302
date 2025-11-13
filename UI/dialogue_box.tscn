@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjpfhbdx78nj7"]
+
+[ext_resource type="Texture2D" uid="uid://chqekf1upl06t" path="res://UI/speech_buble.png" id="1_fe4sh"]
+[ext_resource type="Script" uid="uid://brtldmd5mmon5" path="res://UI/dialogue_box.gd" id="2_yo3x3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gljii"]
+texture = ExtResource("1_fe4sh")
+texture_margin_left = 13.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 7.0
+region_rect = Rect2(10, 10, 28, 31)
+
+[node name="DialogueBox" type="PanelContainer"]
+offset_right = 30.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_gljii")
+script = ExtResource("2_yo3x3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = -9
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

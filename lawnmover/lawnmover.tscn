@@ -64,7 +64,6 @@ amount = 24
 texture = ExtResource("3_k7oek")
 explosiveness = 0.15
 lifetime_randomness = 0.18
-local_coords = true
 direction = Vector2(4.575, -1)
 spread = 30.0
 gravity = Vector2(0, 326.667)
@@ -78,19 +77,21 @@ anim_speed_max = 1.38
 [node name="bounce" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_dde2p")
-volume_db = -27.616
+volume_db = -15.528
 
 [node name="drift" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_a31sx")
-volume_db = -26.684
+volume_db = -4.26
 
 [node name="RykStart" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("6_sr6u5")
-volume_db = -38.316
+volume_db = -16.024
 
 [node name="RykSus" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_a31sx")
-volume_db = -38.316
+volume_db = -16.985
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

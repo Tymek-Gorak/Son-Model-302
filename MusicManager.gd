@@ -9,7 +9,7 @@ var saved_audio_player : AudioStreamPlayer
 func start():
 	var audio_player := AudioStreamPlayer.new()
 	audio_player.stream = MUSIC
-	audio_player.volume_db = -23
+	audio_player.volume_db = -13
 	audio_player.pitch_scale = 0.95
 	add_child(audio_player)
 	audio_player.play()
@@ -29,6 +29,6 @@ func _play_loop():
 		saved_audio_player = AudioStreamPlayer.new()
 		saved_audio_player.stream = MUSIC
 		saved_audio_player.pitch_scale = 0.95
-		saved_audio_player.volume_db = -23
+		saved_audio_player.volume_db = -13
 		add_child(saved_audio_player)
 	saved_audio_player.play(14)

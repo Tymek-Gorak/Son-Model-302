@@ -31,11 +31,16 @@ var rotation_direction := Vector2.ZERO
 var is_drifting := false
 
 func _ready() -> void:
-	$RykStart.play()
+	if visible: start_ryk()
+
+func start_ryk():
+	if %RykStart.playing or %RykSus.playing: return
+	%RykStart.play()
 	await get_tree().create_timer(1.0).timeout
-	$RykStart.stop()
+	%RykStart.stop()
 	%RykSus.play()
 	%RykSus.finished.connect(func():%RykSus.play())
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):
@@ -48,16 +53,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotation_direction -= Vector2.LEFT
 	rotation_direction = rotation_direction.clamp(-Vector2.ONE,Vector2.ONE)
 	
-	if event.is_action_pressed("drift"):
+	if event.is_action_pressed("drift") and visible:
 		%drift.play()
 		%drift.pitch_scale = 1 + randf_range(-0.2, 0.2)
 		is_drifting = true
-	if event.is_action_released("drift"):
+	if event.is_action_released("drift") and visible:
 		%drift.stop()
 		is_drifting = false
 		is_drifting = false
 	
 func _physics_process(delta: float) -> void:
+	if not visible: return
 	if is_drifting:
 		if not rotation_direction.is_zero_approx(): rotate((rotation_direction.angle() - PI/2) * DRIFT_ROTATION_SPEED * delta)
 	else:
@@ -85,6 +91,7 @@ func _physics_process(delta: float) -> void:
 		
 
 func _process(delta: float) -> void:
+	if not visible: return
 	cpu_particles_2d.rotation = -rotation
 	camera_2d.offset = camera_2d.offset.lerp(Vector2.from_angle(rotation) * LOOK_OFFSET, LOOK_SPEED * delta)
 	var facing_direction := floori(rotation / (PI/4))
@@ -108,3 +115,9 @@ func _process(delta: float) -> void:
 			cpu_particles_2d.direction = Vector2(0, 1)
 		7:
 			cpu_particles_2d.direction = Vector2(-4.575, -1)
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		reparent(get_tree().get_first_node_in_group("Garden"))
+		z_index = 0

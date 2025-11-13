@@ -1,115 +1,27 @@
-[gd_scene load_steps=15 format=3 uid="uid://obu3bg8at1uw"]
+[gd_scene load_steps=36 format=3 uid="uid://obu3bg8at1uw"]
 
+[ext_resource type="Script" uid="uid://grefg7ngghih" path="res://sziadzio/starting_cutscene.gd" id="1_kwxik"]
 [ext_resource type="Texture2D" uid="uid://bvuu3kbh040ii" path="res://sziadzio/dizakde.png" id="1_yjulu"]
-[ext_resource type="Texture2D" uid="uid://41f2eli2xiri" path="res://sziadzio/kidos_scene_1_jumping_around_200x100.png" id="2_0vfq1"]
-[ext_resource type="Texture2D" uid="uid://dvo84jgr6pxhh" path="res://sziadzio/kidos_scene_2_called_by_dziadek_200x100_.png" id="3_kwxik"]
-[ext_resource type="Texture2D" uid="uid://g6h3qjct3xrh" path="res://sziadzio/kidos_sene__22232323232_.png" id="4_6boa3"]
-
-[sub_resource type="Animation" id="Animation_6boa3"]
-resource_name = "slep"
-length = 0.6
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Dizakde:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_ktq37"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Dizakde:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_6v0st"]
-resource_name = "wybazce_sei"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Dizakde:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [7, 8, 9, 10, 11]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_h80nc"]
-_data = {
-&"RESET": SubResource("Animation_ktq37"),
-&"slep": SubResource("Animation_6boa3"),
-&"wybazce_sei": SubResource("Animation_6v0st")
-}
-
-[sub_resource type="Animation" id="Animation_0vfq1"]
-resource_name = "jumping"
-length = 2.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("KidosScene1JumpingAround200x100:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6, 1.7, 1.8000001, 1.9, 2, 2.1000001, 2.2, 2.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("KidosScene1JumpingAround200x100:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_0vfq1")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("KidosScene1JumpingAround200x100:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [24]
-}
+[ext_resource type="Texture2D" uid="uid://dkd1kajedn8ok" path="res://sziadzio/kiddos.png" id="2_0vfq1"]
+[ext_resource type="Texture2D" uid="uid://icaujhnmxy57" path="res://sziadzio/bulp.png" id="2_h80nc"]
+[ext_resource type="Texture2D" uid="uid://bsjulrdcg5yvk" path="res://sziadzio/apple_son_302.png" id="4_6boa3"]
+[ext_resource type="Texture2D" uid="uid://dli7itm38gy80" path="res://sziadzio/exclamation_mark_icon.png" id="5_6v0st"]
+[ext_resource type="PackedScene" uid="uid://bjpfhbdx78nj7" path="res://UI/dialogue_box.tscn" id="5_ktq37"]
+[ext_resource type="Texture2D" uid="uid://b035p6nkww4er" path="res://sziadzio/question_mark_icon.png" id="6_7ouw8"]
+[ext_resource type="PackedScene" uid="uid://r7ros1viwyoe" path="res://lawnmover/lawnmover.tscn" id="8_gg0km"]
+[ext_resource type="Texture2D" uid="uid://crkd2hewjrlmn" path="res://Misc/Partickle_4x4.png" id="9_rn5lx"]
+[ext_resource type="Texture2D" uid="uid://cdqqsqojn8pjs" path="res://lawnmover/Lownmover 16x16.png" id="10_28jaj"]
+[ext_resource type="AudioStream" uid="uid://bdu44m0iv8cgk" path="res://sounds/grandpa_new.wav" id="12_bp1ym"]
+[ext_resource type="AudioStream" uid="uid://ca22vl7eqvp5l" path="res://sounds/odbicie.wav" id="13_dlshs"]
+[ext_resource type="AudioStream" uid="uid://buhgmqk8clmm5" path="res://sounds/idea.wav" id="14_j1ka6"]
+[ext_resource type="AudioStream" uid="uid://ch68qkdun6cx0" path="res://sounds/tf.mp3" id="15_vdotv"]
 
 [sub_resource type="Animation" id="Animation_kwxik"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("KidosScene1JumpingAround200x100:frame")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -121,72 +33,134 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("KidosScene1JumpingAround200x100:texture")
+tracks/1/path = NodePath("../KiddoQuestionMark:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_0vfq1")]
+"values": [ExtResource("5_6v0st")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("KidosScene1JumpingAround200x100:hframes")
+tracks/2/path = NodePath("../KiddoQuestionMark:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [24]
+"values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_h80nc"]
-resource_name = "step"
-step = 0.1
-
-[sub_resource type="Animation" id="Animation_rn5lx"]
-resource_name = "jump"
-length = 0.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("KidosScene1JumpingAround200x100:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../KiddoQuestionMark:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../KiddoQuestionMark:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, -24)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [18]
+"values": [true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("KidosScene1JumpingAround200x100:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("KidosScene1JumpingAround200x100:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../WideEyedKiddos:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_kwxik")]
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../PoofTF:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%Kiddos/../KiddoQuestionMark:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("%Kiddos/../LawnmowerPlaceholder:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%Kiddos/../KiddoQuestionMark:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("%TF:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_7ouw8"]
@@ -197,81 +171,784 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("KidosScene1JumpingAround200x100:texture")
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_28jaj"]
+resource_name = "idle2"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [53, 54, 55, 56]
+}
+
+[sub_resource type="Animation" id="Animation_fpohf"]
+resource_name = "initial_shock"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_6boa3")]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("KidosScene1JumpingAround200x100:hframes")
+tracks/1/path = NodePath("../WideEyedKiddos:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [33]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("KidosScene1JumpingAround200x100:frame")
+tracks/2/path = NodePath("%Kiddos/../KiddoQuestionMark:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.099999994),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0vfq1"]
+resource_name = "jumping"
+length = 2.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6, 1.7, 1.8000001, 1.9, 2, 2.1000001, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_rn5lx"]
+resource_name = "step"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Kiddos/../KiddoQuestionMark:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_h80nc"]
+resource_name = "stop"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../KiddoQuestionMark:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_7ouw8")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../KiddoQuestionMark:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../KiddoQuestionMark:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.4),
+"transitions": PackedFloat32Array(0.2825087, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../KiddoQuestionMark:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(123, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_dvn7h"]
+resource_name = "transformation"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("../KiddoQuestionMark:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../KiddoQuestionMark:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, 37)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("../KiddoQuestionMark:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_6v0st")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [3, 4]
+"values": [false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WideEyedKiddos:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PoofTF:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("%Kiddos/../KiddoQuestionMark:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 0.6),
+"transitions": PackedFloat32Array(0.34518218, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%Kiddos/../LawnmowerPlaceholder:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%Lawnmover")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_ryk"
+}, {
+"args": [],
+"method": &"start_ryk"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("%TF:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kwxik"]
 _data = {
 &"RESET": SubResource("Animation_kwxik"),
 &"idle": SubResource("Animation_7ouw8"),
-&"jump": SubResource("Animation_rn5lx"),
+&"idle2": SubResource("Animation_28jaj"),
+&"initial_shock": SubResource("Animation_fpohf"),
 &"jumping": SubResource("Animation_0vfq1"),
-&"step": SubResource("Animation_h80nc")
+&"step": SubResource("Animation_rn5lx"),
+&"stop": SubResource("Animation_h80nc"),
+&"transformation": SubResource("Animation_dvn7h")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_28jaj"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_rn5lx"]
+offsets = PackedFloat32Array(0, 0.58915657, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.6753472, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_28jaj"]
+offsets = PackedFloat32Array(0.0022786458, 1)
+colors = PackedColorArray(0.7777937, 0.7777935, 0.77779305, 1, 0.9037791, 0.9037791, 0.9037791, 1)
+
+[sub_resource type="Animation" id="Animation_ktq37"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/Dizakde:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GrandpaNode/lighbulb:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GrandpaNode/lighbulb:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GrandpaNode/lighbulb:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GrandpaNode/bounce:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GrandpaNode/idea:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vdotv"]
+resource_name = "idea"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/lighbulb:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GrandpaNode/lighbulb:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.099999994, 0.19999999, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GrandpaNode/lighbulb:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.5),
+"transitions": PackedFloat32Array(0.4715976, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GrandpaNode/idea:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gg0km"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/lighbulb:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6boa3"]
+resource_name = "slep"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/lighbulb:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bp1ym"]
+resource_name = "transformation"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/lighbulb:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dlshs"]
+resource_name = "transformation end"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(5, 3), Vector2i(6, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/lighbulb:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6v0st"]
+resource_name = "wybazce_sei"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrandpaNode/Dizakde:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrandpaNode/bounce:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h80nc"]
+_data = {
+&"RESET": SubResource("Animation_ktq37"),
+&"idea": SubResource("Animation_vdotv"),
+&"idle": SubResource("Animation_gg0km"),
+&"slep": SubResource("Animation_6boa3"),
+&"transformation": SubResource("Animation_bp1ym"),
+&"transformation end": SubResource("Animation_dlshs"),
+&"wybazce_sei": SubResource("Animation_6v0st")
 }
 
 [node name="StartingCutscene" type="Node2D"]
+z_index = 1
+script = ExtResource("1_kwxik")
 
-[node name="Kidos" type="Sprite2D" parent="."]
-position = Vector2(1, 12)
+[node name="Buffer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
+autostart = true
 
-[node name="Dymek" type="Sprite2D" parent="."]
+[node name="KidNode" type="Node2D" parent="."]
+position = Vector2(15, 0)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Dymek"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Kiddos" type="Sprite2D" parent="KidNode"]
+unique_name_in_owner = true
+position = Vector2(91, 55)
+texture = ExtResource("2_0vfq1")
+hframes = 6
+vframes = 10
 
-[node name="Dizakde" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
+[node name="KiddosAnimationPlayer" type="AnimationPlayer" parent="KidNode"]
+unique_name_in_owner = true
+root_node = NodePath("../Kiddos")
+libraries = {
+&"": SubResource("AnimationLibrary_kwxik")
+}
+autoplay = "jumping"
+
+[node name="KiddoQuestionMark" type="Sprite2D" parent="KidNode"]
+visible = false
+position = Vector2(32, -24)
+texture = ExtResource("5_6v0st")
+
+[node name="WideEyedKiddos" type="Sprite2D" parent="KidNode"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(96, 53)
+texture = ExtResource("4_6boa3")
+flip_h = true
+
+[node name="LawnmowerPlaceholder" type="Sprite2D" parent="KidNode"]
+visible = false
+z_index = -1
+position = Vector2(95, 53)
+scale = Vector2(2, 2)
+texture = ExtResource("10_28jaj")
+hframes = 8
+
+[node name="PoofTF" type="CPUParticles2D" parent="KidNode"]
+material = SubResource("CanvasItemMaterial_28jaj")
+position = Vector2(96, 59)
+emitting = false
+amount = 40
+texture = ExtResource("9_rn5lx")
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.32
+randomness = 0.46
+lifetime_randomness = 0.2
+fixed_fps = 30
+emission_shape = 3
+emission_rect_extents = Vector2(7, 0)
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+scale_amount_min = 1.5
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_rn5lx")
+color_initial_ramp = SubResource("Gradient_28jaj")
+anim_speed_min = 0.4
+anim_speed_max = 1.0
+
+[node name="Lawnmover" parent="KidNode" instance=ExtResource("8_gg0km")]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+position = Vector2(95, 53)
+
+[node name="TF" type="AudioStreamPlayer" parent="KidNode"]
+unique_name_in_owner = true
+stream = ExtResource("15_vdotv")
+volume_db = -3.0
+pitch_scale = 1.03
+
+[node name="GrandpaNode" type="Node2D" parent="."]
+
+[node name="Dizakde" type="Sprite2D" parent="GrandpaNode"]
+unique_name_in_owner = true
+position = Vector2(70, 54)
 texture = ExtResource("1_yjulu")
 hframes = 7
 vframes = 4
+frame = 21
 
-[node name="Dziaszios" type="AnimationPlayer" parent="Dizakde"]
+[node name="DziasziosAnimationPlayer" type="AnimationPlayer" parent="GrandpaNode"]
+unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_h80nc")
 }
 autoplay = "slep"
 
-[node name="KidosScene1JumpingAround200x100" type="Sprite2D" parent="."]
-position = Vector2(23, 14)
-texture = ExtResource("2_0vfq1")
-hframes = 24
+[node name="lighbulb" type="Sprite2D" parent="GrandpaNode"]
+visible = false
+position = Vector2(69, 23)
+texture = ExtResource("2_h80nc")
+hframes = 4
 
-[node name="KIdos" type="AnimationPlayer" parent="KidosScene1JumpingAround200x100"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_kwxik")
-}
-autoplay = "jumping"
+[node name="DialogueBox" parent="GrandpaNode" instance=ExtResource("5_ktq37")]
+unique_name_in_owner = true
+visible = false
+offset_left = 59.0
+offset_top = 18.0
+offset_right = 97.0
+offset_bottom = 38.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GrandpaNode"]
+unique_name_in_owner = true
+stream = ExtResource("12_bp1ym")
+volume_db = 8.801
+
+[node name="bounce" type="AudioStreamPlayer" parent="GrandpaNode"]
+unique_name_in_owner = true
+stream = ExtResource("13_dlshs")
+volume_db = -9.194
+
+[node name="idea" type="AudioStreamPlayer" parent="GrandpaNode"]
+unique_name_in_owner = true
+stream = ExtResource("14_j1ka6")
+volume_db = -6.797

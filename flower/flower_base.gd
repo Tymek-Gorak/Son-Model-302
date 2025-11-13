@@ -12,6 +12,7 @@ const random_offset = 1
 @onready var weed_zone_collision: CollisionShape2D = %WeedZoneCollision
 
 var corruption_tween : Tween
+var corrupting_weed : Flower
 
 func _ready() -> void:
 	#random offset
@@ -29,10 +30,11 @@ func _on_player_entered(_body : Node2D):
 	if is_weed: WeedManager.weed_count -= 1
 	queue_free()
 
-func _on_weed_zone_entered(_area : Area2D):
+func _on_weed_zone_entered(area : Area2D):
 	if not corruption_timer.is_stopped() or is_weed: return
+	corrupting_weed = area.owner
+	corruption_timer.wait_time = corrupting_weed.corrupt_time
 	corruption_timer.start()
-	
 	corruption_tween = create_tween()
 	corruption_tween.tween_property(self, "modulate", Color.LIME, corruption_timer.wait_time)
 	corruption_tween.parallel().tween_property(self, "scale", Vector2.ONE * 1.3, corruption_timer.wait_time * 2)
@@ -44,6 +46,7 @@ func _stop_corruption(_area : Area2D):
 	scale = Vector2.ONE
 	modulate = Color.WHITE
 	corruption_timer.stop()
+	
 
 func _turn_into_weed():
 	is_weed = true
@@ -54,7 +57,7 @@ func _turn_into_weed():
 	WeedManager.add_weed_spot(self)
 	WeedManager.weed_count += 1
 	var tween := create_tween()
-	tween.tween_property(self, "scale", Vector2.ONE * 0.3, 60)
+	tween.tween_property(self, "scale", Vector2.ONE * 0.3, 50).set_ease(Tween.EASE_IN)
 	tween.tween_callback(func(): 
 		WeedManager.weed_count -= 1
 		queue_free())
